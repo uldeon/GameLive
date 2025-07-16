@@ -202,7 +202,7 @@
       localStorage.setItem("gamelive_profiles", JSON.stringify(profiles));
       document.getElementById("createProfileModal").style.display = "none";
       renderProfiles();
-      showNotification("Profil créé avec succès");
+      showNotification("Profil créé avec succès. Vous pouvez désormais vous connecter.");
     }
 
     function login(profile) {
@@ -236,7 +236,6 @@
           <div id="gameLibrary" style="display: flex; flex-wrap: wrap; gap: 1rem;"></div>
         </div>
       `;
-      showNotification("Connecté à " + profile.name);
       renderLibrary();
     }
 
