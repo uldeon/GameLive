@@ -137,7 +137,9 @@
       const notif = document.createElement("div");
       notif.className = "notif";
       notif.textContent = message;
-      document.getElementById("notifContainer").appendChild(notif);
+      document.getElementById("notifContainer").appendChild(notif); 
+      const audio = new Audio('notif.mp3');
+      audio.play();
       setTimeout(() => {
         notif.classList.add("fade-out");
         setTimeout(() => notif.remove(), 600);
