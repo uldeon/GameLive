@@ -114,10 +114,6 @@
 
   <div id="pinModal" class="modal">
     <div class="modal-content">
-      <script>
-        const modalsound = new Audio('modal.mp3');
-        modalsound.play();
-      </script>
       <h3>Entrer le code PIN</h3>
       <input type="password" id="pinInput" placeholder="Code PIN">
       <button onclick="validatePIN()">Valider</button>
@@ -126,10 +122,6 @@
 
   <div id="createProfileModal" class="modal">
     <div class="modal-content"> 
-      <script>
-        const modalsound = new Audio('modal.mp3');
-        modalsound.play();
-      </script>
       <h3>Créer un profil</h3>
       <input type="text" id="newProfileName" placeholder="Nom du profil">
       <input type="password" id="newProfilePIN" placeholder="Code PIN (optionnel)">
@@ -188,7 +180,9 @@
 
     function openPIN(profile) {
       selectedProfile = profile;
-      if (profile.pin) {
+      if (profile.pin) { 
+        const modalsound = new Audio('modal.mp3');
+        modalsound.play();
         document.getElementById("pinInput").value = "";
         document.getElementById("pinModal").style.display = "flex";
       } else {
