@@ -103,6 +103,14 @@
     }
     .notif.fade-out {
       opacity: 0;
+    } 
+    .play-button {
+      background: rgba(255,255,255,1);
+      border-radius: 5px;
+      border: none;
+      text-align: center;
+      font-size:15px;
+      color:white;
     }
   </style>
 </head>
@@ -343,7 +351,7 @@
         <p>${game.description}</p>
         <small>${game.age}</small>
         <div style="margin: 0.5rem 0;">${game.tags.map(tag => `<span style="background:#555;padding:0.2rem 0.5rem;border-radius:4px;margin-right:0.2rem;">${tag}</span>`).join("")}</div>
-        <button onclick='launchGame("${game.iframe}", "${game.title}")'>Jouer</button>
+        <button class="play-button" onclick='launchGame("${game.iframe}", "${game.title}")'>Jouer</button>
       `;
 
       return card;
