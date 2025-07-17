@@ -133,13 +133,17 @@
     let profiles = JSON.parse(localStorage.getItem("gamelive_profiles") || "[]");
     let selectedProfile = null;
 
+    function wait(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    
     function showNotification(message) {
       const notif = document.createElement("div");
       notif.className = "notif";
       notif.textContent = message;
       document.getElementById("notifContainer").appendChild(notif); 
-      const audio = new Audio('notif.mp3');
-      audio.play();
+      const notifsound = new Audio('notif.mp3');
+      notifsound.play();
       setTimeout(() => {
         notif.classList.add("fade-out");
         setTimeout(() => notif.remove(), 600);
@@ -209,7 +213,10 @@
 
     function login(profile) {
       localStorage.setItem("gamelive_active", JSON.stringify(profile));
-      loadMainInterface(profile);
+      loadMainInterface(profile); 
+      const startupsound = new Audio('startup.mp3');
+      startupsound.play() 
+      wait(5000)
       showNotification("Bienvenue, " + profile.name + " !");
       // Redirection vers l'interface principale à faire ici
     }
