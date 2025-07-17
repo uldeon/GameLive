@@ -216,7 +216,6 @@
       loadMainInterface(profile); 
       const startupsound = new Audio('startup.mp3');
       startupsound.play();
-      wait(5000);
       showNotification("Bienvenue, " + profile.name + " !");
       // Redirection vers l'interface principale à faire ici
     }
@@ -350,7 +349,7 @@
 
     function launchGame(url, title) { 
       const launchsound = new Audio('launchgame.mp3');
-      launchgame.play();
+      launchsound.play();
       const container = document.createElement("div");
       container.style = "position:fixed;inset:0;z-index:9999;background:black;";
       container.innerHTML = `
