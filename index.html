@@ -111,7 +111,35 @@
       text-align: center;
       font-size:15px;
       color: black;
-    }
+    } 
+    .selector {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 2px solid #3498db;
+      background-color: #f0f8ff;
+      color: #333;
+      cursor: pointer;
+      appearance: none; /* enlève le style par défaut sur certains navigateurs */
+      -webkit-appearance: none; /* pour Safari */
+      -moz-appearance: none;    /* pour Firefox */
+}
+
+.selector:hover {
+  background-color: #e6f0ff;
+  border-color: #2980b9;
+}
+
+.selector:focus {
+  outline: none;
+  box-shadow: 0 0 5px #3498db;
+}
+
+.option-theme {
+  background-color: white;
+  color: black;
+}
+    
   </style>
 </head>
 <body>
@@ -238,10 +266,10 @@
         <div id="notifContainer"></div>
         <header style='display: flex; justify-content: space-between; align-items: center; padding: 1rem;'>
           <h1>GameLive</h1>
-          <select id="themeSelect" onchange="setTheme(this.value)">
-            <option value="auto">Auto</option>
-            <option value="light">Clair</option>
-            <option value="dark">Sombre</option>
+          <select class="selector" id="themeSelect" onchange="setTheme(this.value)">
+            <option class="option-theme" value="auto">Auto</option>
+            <option class="option-theme" value="light">Clair</option>
+            <option class="option-theme" value="dark">Sombre</option>
           </select>
         </header>
 
